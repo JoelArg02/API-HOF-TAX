@@ -1,9 +1,10 @@
+import crypto from 'crypto';
 import pool from '../config/db.js';
 import transporter from '../config/mailer.js';
 import UserModel from '../models/userModel.js';
 
 function generarOtp() {
-    return Math.floor(100000 + Math.random() * 900000).toString();
+    return crypto.randomInt(100000, 1000000).toString();
 }
 
 export const sendOtp = async (req, res) => {

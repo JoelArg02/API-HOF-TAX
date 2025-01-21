@@ -2,7 +2,7 @@ import pg from 'pg';
 
 const { Pool } = pg;
 const pool = new Pool({
-    connectionString: 'postgres://default:Xb3WBhFLyd7U@ep-dry-butterfly-a42czc23-pooler.us-east-1.aws.neon.tech:5432/verceldb?sslmode=require',
+    connectionString: process.env.POSTGRES_DB,
 });
 
 (async () => {
