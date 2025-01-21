@@ -53,8 +53,7 @@ export const verifyOtp = async (req, res) => {
         if (rows.length === 0) {
             return res.status(404).json({ message: 'Usuario no encontrado' });
         }
-        const user = await UserModel.getUserByEmail(email);
-
+        
         const { otpcode, otpexpiresat } = rows[0];
         const ahora = new Date();
 
